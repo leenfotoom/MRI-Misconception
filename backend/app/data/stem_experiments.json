@@ -1,0 +1,484 @@
+[
+  {
+    "id": "TE1",
+    "name": "Freeze the Assignment Timeline",
+    "description": "Replay each assignment one line at a time and inspect the stored state.",
+    "prompt": "After the trace, does y keep the value assigned on line 2?",
+    "options": [
+      "keeps_assigned_value",
+      "updates_with_source",
+      "error"
+    ],
+    "likelihoods": {
+      "TM1": {
+        "keeps_assigned_value": 0.09803921568627451,
+        "updates_with_source": 0.8039215686274509,
+        "error": 0.09803921568627451
+      },
+      "TM2": {
+        "keeps_assigned_value": 0.09803921568627451,
+        "updates_with_source": 0.8039215686274509,
+        "error": 0.09803921568627451
+      }
+    },
+    "engine": {
+      "type": "assignment_trace",
+      "params": {
+        "assignments": [
+          [
+            "x",
+            3
+          ],
+          [
+            "y",
+            "x"
+          ],
+          [
+            "x",
+            5
+          ]
+        ],
+        "target": "y",
+        "expected": 3
+      },
+      "explanation": "Assignment copies the current value. Later rebinding x does not rewrite the value already stored in y."
+    }
+  },
+  {
+    "id": "TE2",
+    "name": "Expose the Stop Boundary",
+    "description": "Enumerate the actual values produced by the range before counting iterations.",
+    "prompt": "Does the loop execute the stop value?",
+    "options": [
+      "stop_excluded",
+      "stop_included",
+      "infinite"
+    ],
+    "likelihoods": {
+      "TM3": {
+        "stop_excluded": 0.09803921568627451,
+        "stop_included": 0.8039215686274509,
+        "infinite": 0.09803921568627451
+      },
+      "TM4": {
+        "stop_excluded": 0.09803921568627451,
+        "stop_included": 0.09803921568627451,
+        "infinite": 0.8039215686274509
+      }
+    },
+    "engine": {
+      "type": "loop_range",
+      "params": {
+        "start": 1,
+        "stop": 4,
+        "step": 1,
+        "expected_count": 3
+      },
+      "explanation": "A Python range is half-open: it includes the start and excludes the stop, producing 1, 2, and 3."
+    }
+  },
+  {
+    "id": "TE3",
+    "name": "Parenthesize the Query",
+    "description": "Run the ungrouped and explicitly grouped Boolean filters against the same rows.",
+    "prompt": "Which evaluation explains the different row counts?",
+    "options": [
+      "and_before_or",
+      "left_to_right",
+      "same_result"
+    ],
+    "likelihoods": {
+      "TM5": {
+        "and_before_or": 0.09803921568627451,
+        "left_to_right": 0.8039215686274509,
+        "same_result": 0.09803921568627451
+      },
+      "TM6": {
+        "and_before_or": 0.09803921568627451,
+        "left_to_right": 0.09803921568627451,
+        "same_result": 0.8039215686274509
+      }
+    },
+    "engine": {
+      "type": "sql_precedence",
+      "params": {
+        "rows": [
+          {
+            "active": true,
+            "premium": true,
+            "trial": false
+          },
+          {
+            "active": false,
+            "premium": false,
+            "trial": true
+          },
+          {
+            "active": true,
+            "premium": false,
+            "trial": true
+          },
+          {
+            "active": false,
+            "premium": true,
+            "trial": false
+          }
+        ]
+      },
+      "explanation": "SQL evaluates AND before OR unless parentheses override precedence, so the two filters can return different rows."
+    }
+  },
+  {
+    "id": "TE4",
+    "name": "Minority-Class Audit",
+    "description": "Calculate accuracy and minority recall from the confusion matrix.",
+    "prompt": "What does the audit reveal?",
+    "options": [
+      "high_accuracy_low_recall",
+      "accuracy_sufficient",
+      "balanced_model"
+    ],
+    "likelihoods": {
+      "TM7": {
+        "high_accuracy_low_recall": 0.09803921568627451,
+        "accuracy_sufficient": 0.8039215686274509,
+        "balanced_model": 0.09803921568627451
+      },
+      "TM8": {
+        "high_accuracy_low_recall": 0.09803921568627451,
+        "accuracy_sufficient": 0.8039215686274509,
+        "balanced_model": 0.09803921568627451
+      }
+    },
+    "engine": {
+      "type": "classification_metrics",
+      "params": {
+        "tp": 0,
+        "tn": 990,
+        "fp": 0,
+        "fn": 10
+      },
+      "explanation": "The classifier achieves 99% accuracy by predicting the majority class, but its 0% minority recall makes it useless for finding sick patients."
+    }
+  },
+  {
+    "id": "EE1",
+    "name": "Moment Balance Test",
+    "description": "Use force and moment equilibrium to calculate both support reactions.",
+    "prompt": "Which support carries more of the off-center load?",
+    "options": [
+      "left_higher",
+      "right_higher",
+      "same"
+    ],
+    "likelihoods": {
+      "EM1": {
+        "left_higher": 0.09803921568627451,
+        "right_higher": 0.09803921568627451,
+        "same": 0.8039215686274509
+      },
+      "EM2": {
+        "left_higher": 0.8039215686274509,
+        "right_higher": 0.09803921568627451,
+        "same": 0.09803921568627451
+      }
+    },
+    "engine": {
+      "type": "beam_reactions",
+      "params": {
+        "load": 10,
+        "length": 6,
+        "distance_from_left": 2
+      },
+      "explanation": "Moment equilibrium gives 6.67 kN at the nearer left support and 3.33 kN at the right support."
+    }
+  },
+  {
+    "id": "EE2",
+    "name": "Normalize Force by Area",
+    "description": "Apply stress = force / area to two bars carrying the same force.",
+    "prompt": "Which bar has the larger axial stress?",
+    "options": [
+      "thin_higher",
+      "thick_higher",
+      "same"
+    ],
+    "likelihoods": {
+      "EM2": {
+        "thin_higher": 0.09803921568627451,
+        "thick_higher": 0.8039215686274509,
+        "same": 0.09803921568627451
+      },
+      "EM3": {
+        "thin_higher": 0.09803921568627451,
+        "thick_higher": 0.8039215686274509,
+        "same": 0.09803921568627451
+      }
+    },
+    "engine": {
+      "type": "axial_stress",
+      "params": {
+        "load": 20000,
+        "thin_area": 200,
+        "thick_area": 400
+      },
+      "explanation": "Both bars carry the same force, but dividing by the smaller area produces twice the stress."
+    }
+  },
+  {
+    "id": "EE3",
+    "name": "Feasibility Gate",
+    "description": "Reject designs that violate a hard constraint before comparing desirable criteria.",
+    "prompt": "Which design survives both the strength and budget constraints?",
+    "options": [
+      "design_a",
+      "design_b",
+      "both"
+    ],
+    "likelihoods": {
+      "EM3": {
+        "design_a": 0.8039215686274509,
+        "design_b": 0.09803921568627451,
+        "both": 0.09803921568627451
+      },
+      "EM4": {
+        "design_a": 0.09803921568627451,
+        "design_b": 0.09803921568627451,
+        "both": 0.8039215686274509
+      },
+      "EM7": {
+        "design_a": 0.09803921568627451,
+        "design_b": 0.8039215686274509,
+        "both": 0.09803921568627451
+      }
+    },
+    "engine": {
+      "type": "design_constraints",
+      "params": {
+        "budget": 100,
+        "minimum_strength": 80,
+        "candidates": [
+          {
+            "outcome": "design_a",
+            "cost": 130,
+            "strength": 100,
+            "score": 95
+          },
+          {
+            "outcome": "design_b",
+            "cost": 90,
+            "strength": 85,
+            "score": 88
+          }
+        ]
+      },
+      "explanation": "Design A violates the budget constraint. Design B is the feasible solution because it meets both hard limits."
+    }
+  },
+  {
+    "id": "EE4",
+    "name": "Weighted Trade-off Test",
+    "description": "Score speed, affordability, and reliability under equal priorities.",
+    "prompt": "Which design has the strongest combined performance?",
+    "options": [
+      "design_a",
+      "design_b",
+      "same"
+    ],
+    "likelihoods": {
+      "EM5": {
+        "design_a": 0.8039215686274509,
+        "design_b": 0.09803921568627451,
+        "same": 0.09803921568627451
+      },
+      "EM7": {
+        "design_a": 0.8039215686274509,
+        "design_b": 0.09803921568627451,
+        "same": 0.09803921568627451
+      },
+      "EM8": {
+        "design_a": 0.8039215686274509,
+        "design_b": 0.09803921568627451,
+        "same": 0.09803921568627451
+      }
+    },
+    "engine": {
+      "type": "multiobjective",
+      "params": {
+        "weights": {
+          "speed": 0.333,
+          "cost_score": 0.333,
+          "reliability": 0.334
+        },
+        "candidates": [
+          {
+            "outcome": "design_a",
+            "speed": 1,
+            "cost_score": 0.2,
+            "reliability": 0.3
+          },
+          {
+            "outcome": "design_b",
+            "speed": 0.8,
+            "cost_score": 0.8,
+            "reliability": 0.9
+          }
+        ]
+      },
+      "explanation": "With equal priorities, the balanced design scores higher overall than the option that maximizes speed alone."
+    }
+  },
+  {
+    "id": "ME1",
+    "name": "Substitution Proof",
+    "description": "Solve the equation and substitute the candidate back into both sides.",
+    "prompt": "Which candidate makes both sides exactly equal?",
+    "options": [
+      "solution_verified",
+      "partial_distribution",
+      "sign_shortcut"
+    ],
+    "likelihoods": {
+      "MM1": {
+        "solution_verified": 0.09803921568627451,
+        "partial_distribution": 0.09803921568627451,
+        "sign_shortcut": 0.8039215686274509
+      },
+      "MM2": {
+        "solution_verified": 0.09803921568627451,
+        "partial_distribution": 0.8039215686274509,
+        "sign_shortcut": 0.09803921568627451
+      }
+    },
+    "engine": {
+      "type": "linear_equation",
+      "params": {
+        "a": 2,
+        "b": 3,
+        "c": 14
+      },
+      "explanation": "Distributing to both terms or dividing both sides first gives x = 4; substitution produces 14 on both sides."
+    }
+  },
+  {
+    "id": "ME2",
+    "name": "Duplicate-Input Test",
+    "description": "Group outputs by input and count inputs that point to more than one output.",
+    "prompt": "What does the mapping test prove?",
+    "options": [
+      "not_a_function",
+      "is_a_function",
+      "insufficient"
+    ],
+    "likelihoods": {
+      "MM3": {
+        "not_a_function": 0.09803921568627451,
+        "is_a_function": 0.8039215686274509,
+        "insufficient": 0.09803921568627451
+      },
+      "MM4": {
+        "not_a_function": 0.09803921568627451,
+        "is_a_function": 0.8039215686274509,
+        "insufficient": 0.09803921568627451
+      }
+    },
+    "engine": {
+      "type": "mapping_function",
+      "params": {
+        "pairs": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            9
+          ]
+        ]
+      },
+      "explanation": "Input 2 maps to both 5 and 7, violating the one-output-per-input definition of a function."
+    }
+  },
+  {
+    "id": "ME3",
+    "name": "Constant-Ratio Test",
+    "description": "Compute y/x for every pair rather than comparing additive differences.",
+    "prompt": "Are all y/x ratios equal?",
+    "options": [
+      "not_proportional",
+      "proportional",
+      "insufficient"
+    ],
+    "likelihoods": {
+      "MM5": {
+        "not_proportional": 0.09803921568627451,
+        "proportional": 0.8039215686274509,
+        "insufficient": 0.09803921568627451
+      },
+      "MM6": {
+        "not_proportional": 0.09803921568627451,
+        "proportional": 0.8039215686274509,
+        "insufficient": 0.09803921568627451
+      }
+    },
+    "engine": {
+      "type": "proportional_table",
+      "params": {
+        "pairs": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            7
+          ]
+        ]
+      },
+      "explanation": "The ratios 3, 2.5, and 2.33 are not constant, so the relationship is linear but not proportional."
+    }
+  },
+  {
+    "id": "ME4",
+    "name": "Counterexample Scanner",
+    "description": "Test the converse using an even number that is not divisible by four.",
+    "prompt": "What does the number 6 prove about the converse?",
+    "options": [
+      "converse_false",
+      "converse_true",
+      "positive_only"
+    ],
+    "likelihoods": {
+      "MM7": {
+        "converse_false": 0.09803921568627451,
+        "converse_true": 0.8039215686274509,
+        "positive_only": 0.09803921568627451
+      },
+      "MM8": {
+        "converse_false": 0.09803921568627451,
+        "converse_true": 0.8039215686274509,
+        "positive_only": 0.09803921568627451
+      }
+    },
+    "engine": {
+      "type": "converse_counterexample",
+      "params": {
+        "counterexample": 6
+      },
+      "explanation": "Six is even but is not divisible by four, so one counterexample disproves the converse."
+    }
+  }
+]
+

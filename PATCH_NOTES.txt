@@ -1,0 +1,16 @@
+Misconception MRI v0.2 patch
+
+Included:
+- Cloudflare Workers AI / GPT-OSS 120B reasoning parser
+- .env auto-loading in backend
+- lean Python requirements (removed unused Gemini / sentence-transformers dependencies)
+- Bayesian update fixed to use the actual physics outcome
+- result WOW animations
+- MRI scan animation while reasoning is analyzed
+- updated copy: "Evidence changed your model."
+- basic frontend fetch error handling
+
+IMPORTANT:
+1) Keep your existing backend/.env file. This patch does NOT contain or overwrite it.
+2) Extract this ZIP into your existing project root and choose Replace/Overwrite.
+3) Restart both backend and frontend after replacing files.

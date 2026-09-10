@@ -1,0 +1,74 @@
+[
+  {
+    "id": "E1",
+    "name": "Swap Identical Bulbs",
+    "description": "Swap the physical positions of two identical bulbs in the same series loop and ask which is brighter.",
+    "prompt": "The identical bulbs swap positions. Which bulb will now be brighter?",
+    "options": ["A", "B", "same"],
+    "actual_outcome": "same",
+    "likelihoods": {
+      "M1": {"A": 0.15, "B": 0.55, "same": 0.30},
+      "M2": {"A": 0.05, "B": 0.90, "same": 0.05},
+      "M3": {"A": 0.15, "B": 0.15, "same": 0.70},
+      "M4": {"A": 0.25, "B": 0.25, "same": 0.50},
+      "M5": {"A": 0.15, "B": 0.55, "same": 0.30},
+      "M6": {"A": 0.05, "B": 0.85, "same": 0.10},
+      "M7": {"A": 0.20, "B": 0.20, "same": 0.60},
+      "M8": {"A": 0.20, "B": 0.20, "same": 0.60}
+    }
+  },
+  {
+    "id": "E2",
+    "name": "Two Ammeter Test",
+    "description": "Place one ideal ammeter before the first bulb and another after the second bulb in a series loop.",
+    "prompt": "What will the two ammeters show?",
+    "options": ["first_higher", "second_higher", "same"],
+    "actual_outcome": "same",
+    "likelihoods": {
+      "M1": {"first_higher": 0.82, "second_higher": 0.05, "same": 0.13},
+      "M2": {"first_higher": 0.65, "second_higher": 0.10, "same": 0.25},
+      "M3": {"first_higher": 0.10, "second_higher": 0.10, "same": 0.80},
+      "M4": {"first_higher": 0.25, "second_higher": 0.20, "same": 0.55},
+      "M5": {"first_higher": 0.88, "second_higher": 0.04, "same": 0.08},
+      "M6": {"first_higher": 0.60, "second_higher": 0.15, "same": 0.25},
+      "M7": {"first_higher": 0.15, "second_higher": 0.15, "same": 0.70},
+      "M8": {"first_higher": 0.20, "second_higher": 0.20, "same": 0.60}
+    }
+  },
+  {
+    "id": "E3",
+    "name": "Change Total Resistance",
+    "description": "Keep the battery fixed, then add an identical resistor in series and ask what happens to total current.",
+    "prompt": "A second identical resistor is added in series. What happens to the total current?",
+    "options": ["same", "decreases", "increases"],
+    "actual_outcome": "decreases",
+    "likelihoods": {
+      "M1": {"same": 0.25, "decreases": 0.65, "increases": 0.10},
+      "M2": {"same": 0.30, "decreases": 0.55, "increases": 0.15},
+      "M3": {"same": 0.88, "decreases": 0.08, "increases": 0.04},
+      "M4": {"same": 0.35, "decreases": 0.45, "increases": 0.20},
+      "M5": {"same": 0.25, "decreases": 0.65, "increases": 0.10},
+      "M6": {"same": 0.30, "decreases": 0.55, "increases": 0.15},
+      "M7": {"same": 0.25, "decreases": 0.65, "increases": 0.10},
+      "M8": {"same": 0.20, "decreases": 0.72, "increases": 0.08}
+    }
+  },
+  {
+    "id": "E4",
+    "name": "Unequal Parallel Branches",
+    "description": "Create two parallel branches with different resistances and compare branch currents.",
+    "prompt": "Two parallel branches have different resistances. Are their currents equal?",
+    "options": ["equal", "lower_resistance_more", "higher_resistance_more"],
+    "actual_outcome": "lower_resistance_more",
+    "likelihoods": {
+      "M1": {"equal": 0.35, "lower_resistance_more": 0.55, "higher_resistance_more": 0.10},
+      "M2": {"equal": 0.40, "lower_resistance_more": 0.45, "higher_resistance_more": 0.15},
+      "M3": {"equal": 0.42, "lower_resistance_more": 0.45, "higher_resistance_more": 0.13},
+      "M4": {"equal": 0.35, "lower_resistance_more": 0.45, "higher_resistance_more": 0.20},
+      "M5": {"equal": 0.35, "lower_resistance_more": 0.55, "higher_resistance_more": 0.10},
+      "M6": {"equal": 0.40, "lower_resistance_more": 0.45, "higher_resistance_more": 0.15},
+      "M7": {"equal": 0.90, "lower_resistance_more": 0.07, "higher_resistance_more": 0.03},
+      "M8": {"equal": 0.60, "lower_resistance_more": 0.30, "higher_resistance_more": 0.10}
+    }
+  }
+]

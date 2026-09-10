@@ -1,0 +1,549 @@
+[
+  {
+    "id": "T1",
+    "code": "CODE TRACE 01",
+    "domain": "technology",
+    "topic": "Programming",
+    "title": "Assignment is a snapshot",
+    "title_ar": "الإسناد يحفظ القيمة في لحظته",
+    "question": "After x = 3, y = x, then x = 5, what is y?",
+    "question_ar": "بعد x = 3 ثم y = x ثم x = 5، ما قيمة y؟",
+    "options": [
+      {
+        "value": "A",
+        "label": "3",
+        "label_ar": "3"
+      },
+      {
+        "value": "B",
+        "label": "5",
+        "label_ar": "5"
+      },
+      {
+        "value": "same",
+        "label": "Error",
+        "label_ar": "خطأ"
+      }
+    ],
+    "sample_reasoning": "y becomes 5 because it stays linked to x.",
+    "sample_reasoning_ar": "تصبح y تساوي 5 لأنها تبقى مرتبطة مع x.",
+    "experiment_ids": [
+      "TE1"
+    ],
+    "misconception_ids": [
+      "TM1",
+      "TM2"
+    ],
+    "circuit": {
+      "type": "code_trace",
+      "voltage": 0,
+      "resistances": []
+    },
+    "concepts": [
+      "assignment",
+      "execution order"
+    ]
+  },
+  {
+    "id": "T2",
+    "code": "LOOP TRACE 02",
+    "domain": "technology",
+    "topic": "Programming",
+    "title": "Half-open loop bounds",
+    "title_ar": "حدود الحلقة غير الشاملة",
+    "question": "How many times does for i in range(1, 4) run?",
+    "question_ar": "كم مرة تعمل for i in range(1, 4)؟",
+    "options": [
+      {
+        "value": "A",
+        "label": "3 times",
+        "label_ar": "3 مرات"
+      },
+      {
+        "value": "B",
+        "label": "4 times",
+        "label_ar": "4 مرات"
+      },
+      {
+        "value": "same",
+        "label": "Forever",
+        "label_ar": "إلى الأبد"
+      }
+    ],
+    "sample_reasoning": "It runs four times because the range includes 4.",
+    "sample_reasoning_ar": "تعمل أربع مرات لأن range تشمل الرقم 4.",
+    "experiment_ids": [
+      "TE2"
+    ],
+    "misconception_ids": [
+      "TM3",
+      "TM4"
+    ],
+    "circuit": {
+      "type": "loop_trace",
+      "voltage": 0,
+      "resistances": []
+    },
+    "concepts": [
+      "iteration",
+      "range bounds"
+    ]
+  },
+  {
+    "id": "T3",
+    "code": "DATA QUERY 03",
+    "domain": "technology",
+    "topic": "Databases",
+    "title": "Boolean precedence in SQL",
+    "title_ar": "أولوية العمليات المنطقية في SQL",
+    "question": "Does active AND premium OR trial equal active AND (premium OR trial)?",
+    "question_ar": "هل active AND premium OR trial تساوي active AND (premium OR trial)؟",
+    "options": [
+      {
+        "value": "A",
+        "label": "No, results can differ",
+        "label_ar": "لا، قد تختلف النتائج"
+      },
+      {
+        "value": "B",
+        "label": "Yes, always identical",
+        "label_ar": "نعم، دائمًا متطابقة"
+      },
+      {
+        "value": "same",
+        "label": "Only row order changes",
+        "label_ar": "يتغير ترتيب الصفوف فقط"
+      }
+    ],
+    "sample_reasoning": "They are identical because SQL reads all conditions left to right.",
+    "sample_reasoning_ar": "هما متطابقتان لأن SQL يقرأ الشروط من اليسار إلى اليمين.",
+    "experiment_ids": [
+      "TE3"
+    ],
+    "misconception_ids": [
+      "TM5",
+      "TM6"
+    ],
+    "circuit": {
+      "type": "database_query",
+      "voltage": 0,
+      "resistances": []
+    },
+    "concepts": [
+      "SQL",
+      "boolean precedence"
+    ]
+  },
+  {
+    "id": "T4",
+    "code": "AI AUDIT 04",
+    "domain": "technology",
+    "topic": "Artificial Intelligence",
+    "title": "Accuracy can hide failure",
+    "title_ar": "قد تخفي Accuracy فشل النموذج",
+    "question": "A disease model is 99% accurate but finds 0 of 10 sick patients. Is it good?",
+    "question_ar": "موديل مرض Accuracy لديه 99% لكنه لم يكتشف أيًا من 10 مرضى. هل هو جيد؟",
+    "options": [
+      {
+        "value": "A",
+        "label": "No, recall reveals failure",
+        "label_ar": "لا، Recall يكشف الفشل"
+      },
+      {
+        "value": "B",
+        "label": "Yes, 99% is excellent",
+        "label_ar": "نعم، 99% ممتازة"
+      },
+      {
+        "value": "same",
+        "label": "Cannot evaluate anything",
+        "label_ar": "لا يمكن تقييم أي شيء"
+      }
+    ],
+    "sample_reasoning": "It is excellent because 99% accuracy is almost perfect.",
+    "sample_reasoning_ar": "هو ممتاز لأن Accuracy بنسبة 99% شبه كاملة.",
+    "experiment_ids": [
+      "TE4"
+    ],
+    "misconception_ids": [
+      "TM7",
+      "TM8"
+    ],
+    "circuit": {
+      "type": "ai_matrix",
+      "voltage": 0,
+      "resistances": []
+    },
+    "concepts": [
+      "accuracy",
+      "recall",
+      "class imbalance"
+    ]
+  },
+  {
+    "id": "ENG1",
+    "code": "STRUCTURE 01",
+    "domain": "engineering",
+    "topic": "Structures",
+    "title": "Off-center beam reactions",
+    "title_ar": "ردود أفعال كمرة بحمل غير مركزي",
+    "question": "A point load is closer to the left support. Which reaction is larger?",
+    "question_ar": "حمل مركز أقرب للمسند الأيسر. أي رد فعل أكبر؟",
+    "options": [
+      {
+        "value": "A",
+        "label": "Left reaction",
+        "label_ar": "رد الفعل الأيسر"
+      },
+      {
+        "value": "B",
+        "label": "Right reaction",
+        "label_ar": "رد الفعل الأيمن"
+      },
+      {
+        "value": "same",
+        "label": "They are equal",
+        "label_ar": "متساويان"
+      }
+    ],
+    "sample_reasoning": "Both supports share every load equally, so the reactions are the same.",
+    "sample_reasoning_ar": "المسندان يتقاسمان أي حمل بالتساوي، لذلك ردود الأفعال متساوية.",
+    "experiment_ids": [
+      "EE1"
+    ],
+    "misconception_ids": [
+      "EM1",
+      "EM2"
+    ],
+    "circuit": {
+      "type": "beam_reactions",
+      "voltage": 0,
+      "resistances": []
+    },
+    "concepts": [
+      "equilibrium",
+      "moments",
+      "load path"
+    ]
+  },
+  {
+    "id": "ENG2",
+    "code": "STRESS LAB 02",
+    "domain": "engineering",
+    "topic": "Structures",
+    "title": "Force is not stress",
+    "title_ar": "القوة ليست هي الإجهاد",
+    "question": "Two bars carry the same axial force. Which has higher stress?",
+    "question_ar": "قضيبان يحملان نفس القوة المحورية. أيهما إجهاده أعلى؟",
+    "options": [
+      {
+        "value": "A",
+        "label": "Smaller-area bar",
+        "label_ar": "القضيب ذو المساحة الأصغر"
+      },
+      {
+        "value": "B",
+        "label": "Larger-area bar",
+        "label_ar": "القضيب ذو المساحة الأكبر"
+      },
+      {
+        "value": "same",
+        "label": "Same stress",
+        "label_ar": "نفس الإجهاد"
+      }
+    ],
+    "sample_reasoning": "The thicker bar has higher stress because it carries more material.",
+    "sample_reasoning_ar": "القضيب الأسمك إجهاده أعلى لأنه يحتوي مادة أكثر.",
+    "experiment_ids": [
+      "EE2"
+    ],
+    "misconception_ids": [
+      "EM2",
+      "EM3"
+    ],
+    "circuit": {
+      "type": "stress_compare",
+      "voltage": 0,
+      "resistances": []
+    },
+    "concepts": [
+      "stress",
+      "force",
+      "area"
+    ]
+  },
+  {
+    "id": "ENG3",
+    "code": "DESIGN REVIEW 03",
+    "domain": "engineering",
+    "topic": "Design",
+    "title": "Criteria versus constraints",
+    "title_ar": "المعايير مقابل القيود",
+    "question": "Design A is strongest but over budget; B meets strength and budget. Which is feasible?",
+    "question_ar": "التصميم A هو الأقوى لكنه يتجاوز الميزانية، وB يحقق القوة والميزانية. أيهما feasible؟",
+    "options": [
+      {
+        "value": "A",
+        "label": "Design A",
+        "label_ar": "التصميم A"
+      },
+      {
+        "value": "B",
+        "label": "Design B",
+        "label_ar": "التصميم B"
+      },
+      {
+        "value": "same",
+        "label": "Both equally feasible",
+        "label_ar": "كلاهما feasible بنفس الدرجة"
+      }
+    ],
+    "sample_reasoning": "A is best because the strongest design always wins.",
+    "sample_reasoning_ar": "A هو الأفضل لأن أقوى تصميم يفوز دائمًا.",
+    "experiment_ids": [
+      "EE3"
+    ],
+    "misconception_ids": [
+      "EM3",
+      "EM4",
+      "EM7"
+    ],
+    "circuit": {
+      "type": "design_matrix",
+      "voltage": 0,
+      "resistances": []
+    },
+    "concepts": [
+      "criteria",
+      "constraints",
+      "feasibility"
+    ]
+  },
+  {
+    "id": "ENG4",
+    "code": "OPTIMIZER 04",
+    "domain": "engineering",
+    "topic": "Optimization",
+    "title": "Engineering is multi-objective",
+    "title_ar": "التحسين الهندسي متعدد الأهداف",
+    "question": "A is fastest but costly and unreliable; B is balanced. Which is optimal for equal priorities?",
+    "question_ar": "A الأسرع لكنه مكلف وغير موثوق، وB متوازن. أيهما optimal عند تساوي الأولويات؟",
+    "options": [
+      {
+        "value": "A",
+        "label": "Fastest design A",
+        "label_ar": "التصميم A الأسرع"
+      },
+      {
+        "value": "B",
+        "label": "Balanced design B",
+        "label_ar": "التصميم B المتوازن"
+      },
+      {
+        "value": "same",
+        "label": "They are equivalent",
+        "label_ar": "متكافئان"
+      }
+    ],
+    "sample_reasoning": "A is optimal because optimization means maximizing speed.",
+    "sample_reasoning_ar": "A هو optimal لأن Optimization يعني تعظيم السرعة.",
+    "experiment_ids": [
+      "EE4"
+    ],
+    "misconception_ids": [
+      "EM5",
+      "EM7",
+      "EM8"
+    ],
+    "circuit": {
+      "type": "optimization",
+      "voltage": 0,
+      "resistances": []
+    },
+    "concepts": [
+      "trade-offs",
+      "multi-objective design"
+    ]
+  },
+  {
+    "id": "MATH1",
+    "code": "ALGEBRA 01",
+    "domain": "mathematics",
+    "topic": "Algebra",
+    "title": "Preserve equality",
+    "title_ar": "الحفاظ على تساوي طرفي المعادلة",
+    "question": "Solve 2(x + 3) = 14.",
+    "question_ar": "حل المعادلة 2(x + 3) = 14.",
+    "options": [
+      {
+        "value": "A",
+        "label": "x = 4",
+        "label_ar": "x = 4"
+      },
+      {
+        "value": "B",
+        "label": "x = 7",
+        "label_ar": "x = 7"
+      },
+      {
+        "value": "same",
+        "label": "x = 5.5",
+        "label_ar": "x = 5.5"
+      }
+    ],
+    "sample_reasoning": "The 2 multiplies x only, so 2x + 3 = 14 and x = 5.5.",
+    "sample_reasoning_ar": "العدد 2 يضرب x فقط، فتصبح 2x + 3 = 14 وx = 5.5.",
+    "experiment_ids": [
+      "ME1"
+    ],
+    "misconception_ids": [
+      "MM1",
+      "MM2"
+    ],
+    "circuit": {
+      "type": "equation_balance",
+      "voltage": 0,
+      "resistances": []
+    },
+    "concepts": [
+      "equivalence",
+      "distribution"
+    ]
+  },
+  {
+    "id": "MATH2",
+    "code": "FUNCTION 02",
+    "domain": "mathematics",
+    "topic": "Functions",
+    "title": "One input, one output",
+    "title_ar": "لكل مدخل مخرج واحد",
+    "question": "The pairs include (2,5) and (2,7). Is the relation a function?",
+    "question_ar": "العلاقة تحتوي (2,5) و(2,7). هل هي دالة؟",
+    "options": [
+      {
+        "value": "A",
+        "label": "No",
+        "label_ar": "لا"
+      },
+      {
+        "value": "B",
+        "label": "Yes",
+        "label_ar": "نعم"
+      },
+      {
+        "value": "same",
+        "label": "Only if outputs repeat",
+        "label_ar": "فقط إذا تكررت المخرجات"
+      }
+    ],
+    "sample_reasoning": "It is a function because every pair has an x and y value.",
+    "sample_reasoning_ar": "هي دالة لأن كل زوج يحتوي قيمة x وقيمة y.",
+    "experiment_ids": [
+      "ME2"
+    ],
+    "misconception_ids": [
+      "MM3",
+      "MM4"
+    ],
+    "circuit": {
+      "type": "function_map",
+      "voltage": 0,
+      "resistances": []
+    },
+    "concepts": [
+      "functions",
+      "mapping"
+    ]
+  },
+  {
+    "id": "MATH3",
+    "code": "RATIO LAB 03",
+    "domain": "mathematics",
+    "topic": "Problem Solving",
+    "title": "Increase is not proportion",
+    "title_ar": "الزيادة لا تعني تناسبًا",
+    "question": "x = 1,2,3 and y = 3,5,7. Is y proportional to x?",
+    "question_ar": "إذا x = 1,2,3 وy = 3,5,7، هل y تتناسب طرديًا مع x؟",
+    "options": [
+      {
+        "value": "A",
+        "label": "No",
+        "label_ar": "لا"
+      },
+      {
+        "value": "B",
+        "label": "Yes",
+        "label_ar": "نعم"
+      },
+      {
+        "value": "same",
+        "label": "Not enough data",
+        "label_ar": "المعلومات غير كافية"
+      }
+    ],
+    "sample_reasoning": "Yes, because x and y both increase by a steady amount.",
+    "sample_reasoning_ar": "نعم، لأن x وy تزدادان بمقدار ثابت.",
+    "experiment_ids": [
+      "ME3"
+    ],
+    "misconception_ids": [
+      "MM5",
+      "MM6"
+    ],
+    "circuit": {
+      "type": "ratio_graph",
+      "voltage": 0,
+      "resistances": []
+    },
+    "concepts": [
+      "ratio",
+      "proportionality"
+    ]
+  },
+  {
+    "id": "MATH4",
+    "code": "LOGIC 04",
+    "domain": "mathematics",
+    "topic": "Logic",
+    "title": "A converse needs proof",
+    "title_ar": "عكس العبارة يحتاج إثباتًا",
+    "question": "If a number is divisible by 4 it is even. Is the converse always true?",
+    "question_ar": "إذا كان العدد يقبل القسمة على 4 فهو زوجي. هل العكس صحيح دائمًا؟",
+    "options": [
+      {
+        "value": "A",
+        "label": "No",
+        "label_ar": "لا"
+      },
+      {
+        "value": "B",
+        "label": "Yes",
+        "label_ar": "نعم"
+      },
+      {
+        "value": "same",
+        "label": "Only for positive numbers",
+        "label_ar": "فقط للأعداد الموجبة"
+      }
+    ],
+    "sample_reasoning": "Yes, reversing a true if-then statement keeps it true.",
+    "sample_reasoning_ar": "نعم، عكس عبارة if-then صحيحة يبقيها صحيحة.",
+    "experiment_ids": [
+      "ME4"
+    ],
+    "misconception_ids": [
+      "MM7",
+      "MM8"
+    ],
+    "circuit": {
+      "type": "logic_test",
+      "voltage": 0,
+      "resistances": []
+    },
+    "concepts": [
+      "conditional logic",
+      "counterexample"
+    ]
+  }
+]
+

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "S1",
+    "code": "CIRCUIT 01",
+    "title": "Identical bulbs in series",
+    "title_ar": "مصباحان متطابقان على التوالي",
+    "question": "Which bulb will be brighter?",
+    "question_ar": "أي مصباح سيكون أكثر سطوعًا؟",
+    "options": [
+      {"value": "A", "label": "Bulb A", "label_ar": "المصباح A"},
+      {"value": "B", "label": "Bulb B", "label_ar": "المصباح B"},
+      {"value": "same", "label": "Same brightness", "label_ar": "نفس السطوع"}
+    ],
+    "sample_reasoning": "Because electricity reaches bulb A first, and A is closer to the battery.",
+    "sample_reasoning_ar": "أعتقد أن المصباح A سيكون أكثر سطوعًا لأنه أقرب إلى البطارية وتصل إليه الكهرباء أولًا.",
+    "experiment_ids": ["E1", "E2"],
+    "circuit": {"type": "series_bulbs", "voltage": 9.0, "resistances": [15.0, 15.0]},
+    "concepts": ["current continuity", "proximity", "sequential arrival"]
+  },
+  {
+    "id": "S2",
+    "code": "CIRCUIT 02",
+    "title": "Resistance and total current",
+    "title_ar": "المقاومة والتيار الكلي",
+    "question": "A second identical resistor is added in series. What happens to total current?",
+    "question_ar": "تمت إضافة مقاومة مطابقة على التوالي. ماذا يحدث للتيار الكلي؟",
+    "options": [
+      {"value": "A", "label": "It decreases", "label_ar": "ينخفض"},
+      {"value": "B", "label": "It increases", "label_ar": "يرتفع"},
+      {"value": "same", "label": "It stays the same", "label_ar": "يبقى كما هو"}
+    ],
+    "sample_reasoning": "The battery always pushes the same amount of current, so adding a resistor should not change it.",
+    "sample_reasoning_ar": "البطارية ترسل نفس كمية التيار دائمًا، لذلك إضافة مقاومة لا يجب أن تغيّر التيار.",
+    "experiment_ids": ["E3"],
+    "circuit": {"type": "resistance_change", "voltage": 9.0, "resistances": [15.0, 15.0]},
+    "concepts": ["Ohm's law", "constant-current battery model"]
+  },
+  {
+    "id": "S3",
+    "code": "CIRCUIT 03",
+    "title": "Unequal parallel branches",
+    "title_ar": "فروع متوازية بمقاومات مختلفة",
+    "question": "Which branch carries more current?",
+    "question_ar": "أي فرع يمر فيه تيار أكبر؟",
+    "options": [
+      {"value": "A", "label": "15Ω branch", "label_ar": "فرع 15Ω"},
+      {"value": "B", "label": "30Ω branch", "label_ar": "فرع 30Ω"},
+      {"value": "same", "label": "Equal current", "label_ar": "تيار متساوٍ"}
+    ],
+    "sample_reasoning": "Parallel means the current splits equally, so both branches should get the same current.",
+    "sample_reasoning_ar": "التوازي يعني أن التيار ينقسم بالتساوي، لذلك يجب أن يحصل الفرعان على نفس التيار.",
+    "experiment_ids": ["E4"],
+    "circuit": {"type": "parallel_branches", "voltage": 9.0, "resistances": [15.0, 30.0]},
+    "concepts": ["parallel current", "resistance", "equal split misconception"]
+  },
+  {
+    "id": "S4",
+    "code": "CIRCUIT 04",
+    "title": "Current before and after a component",
+    "title_ar": "التيار قبل المكوّن وبعده",
+    "question": "Compare the current before the first bulb and after the second bulb.",
+    "question_ar": "قارن التيار قبل المصباح الأول وبعد المصباح الثاني.",
+    "options": [
+      {"value": "A", "label": "First is higher", "label_ar": "الأول أكبر"},
+      {"value": "B", "label": "Second is higher", "label_ar": "الثاني أكبر"},
+      {"value": "same", "label": "Same current", "label_ar": "نفس التيار"}
+    ],
+    "sample_reasoning": "The first ammeter should read more because the bulbs use some current before it reaches the second meter.",
+    "sample_reasoning_ar": "يجب أن يقرأ الأميتر الأول تيارًا أكبر لأن المصابيح تستهلك جزءًا من التيار قبل أن يصل إلى الأميتر الثاني.",
+    "experiment_ids": ["E2"],
+    "circuit": {"type": "ammeter_series", "voltage": 9.0, "resistances": [15.0, 15.0]},
+    "concepts": ["current continuity", "current consumption"]
+  }
+]

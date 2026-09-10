@@ -1,0 +1,460 @@
+[
+  {
+    "id": "TM1",
+    "domain": "technology",
+    "name": "Live Variable Link Model",
+    "short": "Assigned variables keep tracking their source",
+    "claim": "variable_tracks_source",
+    "description": "The learner treats assignment as a permanent live link between variables.",
+    "keywords": [
+      "changes with x",
+      "tracks x",
+      "linked forever",
+      "تتغير مع x",
+      "مرتبطة بالمتغير"
+    ],
+    "prototypes": [
+      "y changes whenever x changes after y = x",
+      "assignment permanently links two variables",
+      "قيمة y تتغير لاحقًا كلما تغيرت x"
+    ]
+  },
+  {
+    "id": "TM2",
+    "domain": "technology",
+    "name": "Simultaneous Execution Model",
+    "short": "Program lines execute simultaneously",
+    "claim": "simultaneous_execution",
+    "description": "The learner ignores sequential execution and evaluates all lines from the final state.",
+    "keywords": [
+      "all at once",
+      "final values everywhere",
+      "بنفس الوقت",
+      "القيم النهائية"
+    ],
+    "prototypes": [
+      "all assignment lines happen at the same time",
+      "use the final value of x for earlier lines",
+      "كل الأسطر تنفذ بنفس الوقت"
+    ]
+  },
+  {
+    "id": "TM3",
+    "domain": "technology",
+    "name": "Inclusive Stop Model",
+    "short": "A loop always includes its stop value",
+    "claim": "loop_stop_included",
+    "description": "The learner assumes the upper bound of a half-open range is executed.",
+    "keywords": [
+      "includes 4",
+      "stop included",
+      "آخر رقم محسوب",
+      "يشمل الحد الأخير"
+    ],
+    "prototypes": [
+      "range one to four includes four",
+      "the stop value is another iteration",
+      "اللوب يشمل الرقم الأخير"
+    ]
+  },
+  {
+    "id": "TM4",
+    "domain": "technology",
+    "name": "Static Loop Condition Model",
+    "short": "A loop condition is checked only once",
+    "claim": "loop_condition_static",
+    "description": "The learner believes a loop condition is not re-evaluated after each iteration.",
+    "keywords": [
+      "checked once",
+      "condition stays true",
+      "يفحص مرة",
+      "الشرط ثابت"
+    ],
+    "prototypes": [
+      "the condition is checked only before the loop",
+      "a true loop condition never changes",
+      "يتم فحص الشرط مرة واحدة"
+    ]
+  },
+  {
+    "id": "TM5",
+    "domain": "technology",
+    "name": "Left-to-Right SQL Model",
+    "short": "SQL AND/OR runs strictly left to right",
+    "claim": "sql_left_to_right",
+    "description": "The learner ignores SQL operator precedence.",
+    "keywords": [
+      "left to right",
+      "first condition first",
+      "من اليسار لليمين",
+      "الشرط الأول"
+    ],
+    "prototypes": [
+      "sql evaluates and and or from left to right",
+      "the first written operator always runs first",
+      "SQL ينفذ الشروط من اليسار إلى اليمين"
+    ]
+  },
+  {
+    "id": "TM6",
+    "domain": "technology",
+    "name": "Boolean Operator Conflation",
+    "short": "AND and OR filter rows the same way",
+    "claim": "boolean_operators_same",
+    "description": "The learner treats AND and OR as interchangeable filters.",
+    "keywords": [
+      "and same as or",
+      "both filters",
+      "نفس الاشي",
+      "AND و OR نفس"
+    ],
+    "prototypes": [
+      "and and or return the same rows",
+      "both operators just filter data",
+      "لا يوجد فرق بين AND و OR"
+    ]
+  },
+  {
+    "id": "TM7",
+    "domain": "technology",
+    "name": "Accuracy-Only AI Model",
+    "short": "High accuracy proves an AI model is good",
+    "claim": "accuracy_is_enough",
+    "description": "The learner evaluates a classifier using accuracy alone.",
+    "keywords": [
+      "accuracy is enough",
+      "99 percent means good",
+      "الدقة تكفي",
+      "accuracy عالية"
+    ],
+    "prototypes": [
+      "a model with 99 percent accuracy must be excellent",
+      "accuracy alone proves the classifier works",
+      "إذا كانت accuracy عالية فالموديل ممتاز"
+    ]
+  },
+  {
+    "id": "TM8",
+    "domain": "technology",
+    "name": "Class Balance Blindness",
+    "short": "Class imbalance cannot distort evaluation",
+    "claim": "class_balance_irrelevant",
+    "description": "The learner overlooks minority-class recall and imbalanced data.",
+    "keywords": [
+      "class balance does not matter",
+      "minority irrelevant",
+      "التوازن لا يهم",
+      "الفئة القليلة"
+    ],
+    "prototypes": [
+      "the number of examples in each class does not matter",
+      "minority recall is irrelevant when accuracy is high",
+      "عدم توازن الفئات لا يؤثر"
+    ]
+  },
+  {
+    "id": "EM1",
+    "domain": "engineering",
+    "name": "Equal Reaction Model",
+    "short": "Supports always share a load equally",
+    "claim": "reactions_always_equal",
+    "description": "The learner assumes support reactions are equal even for an off-center load.",
+    "keywords": [
+      "split equally",
+      "half each",
+      "نصف الحمل",
+      "بالتساوي"
+    ],
+    "prototypes": [
+      "both supports carry half the load no matter where it is",
+      "support reactions are always equal",
+      "كل مسند يحمل نصف الحمل"
+    ]
+  },
+  {
+    "id": "EM2",
+    "domain": "engineering",
+    "name": "Size Determines Force Model",
+    "short": "The larger member always carries more force",
+    "claim": "size_sets_internal_force",
+    "description": "The learner confuses member force with stress and cross-sectional area.",
+    "keywords": [
+      "bigger carries more force",
+      "thicker gets load",
+      "الأكبر يحمل",
+      "السميك"
+    ],
+    "prototypes": [
+      "the thicker member automatically receives more force",
+      "member size alone decides the load path",
+      "العضو الأكبر يحمل قوة أكبر دائمًا"
+    ]
+  },
+  {
+    "id": "EM3",
+    "domain": "engineering",
+    "name": "Strength-Only Design Model",
+    "short": "The strongest design is automatically best",
+    "claim": "strength_only_design",
+    "description": "The learner ignores cost, mass, usability, and other design constraints.",
+    "keywords": [
+      "strongest is best",
+      "only strength matters",
+      "الأقوى هو الأفضل",
+      "المتانة فقط"
+    ],
+    "prototypes": [
+      "choose the strongest design regardless of cost",
+      "engineering quality only means maximum strength",
+      "أفضل تصميم هو الأقوى فقط"
+    ]
+  },
+  {
+    "id": "EM4",
+    "domain": "engineering",
+    "name": "Criteria-Constraint Conflation",
+    "short": "Criteria and constraints mean the same thing",
+    "claim": "criteria_constraints_same",
+    "description": "The learner does not distinguish desired performance from hard limits.",
+    "keywords": [
+      "criteria same constraints",
+      "both requirements",
+      "نفس المعنى",
+      "كلها متطلبات"
+    ],
+    "prototypes": [
+      "criteria and constraints are identical",
+      "a preference and a hard limit are the same",
+      "المعايير والقيود شيء واحد"
+    ]
+  },
+  {
+    "id": "EM5",
+    "domain": "engineering",
+    "name": "Local Change Model",
+    "short": "Changing one component affects only that component",
+    "claim": "local_change_only",
+    "description": "The learner ignores system-level interactions.",
+    "keywords": [
+      "only that part",
+      "no system effect",
+      "فقط هذا الجزء",
+      "لا يؤثر على النظام"
+    ],
+    "prototypes": [
+      "changing one component cannot affect the full system",
+      "a local modification stays local",
+      "تغيير جزء لا يؤثر على باقي النظام"
+    ]
+  },
+  {
+    "id": "EM6",
+    "domain": "engineering",
+    "name": "Perfect Redundancy Model",
+    "short": "Adding a duplicate component doubles capacity",
+    "claim": "redundancy_doubles_capacity",
+    "description": "The learner assumes redundancy adds capacity linearly without load-sharing limits.",
+    "keywords": [
+      "double capacity",
+      "twice as strong",
+      "تتضاعف القدرة",
+      "ضعف القوة"
+    ],
+    "prototypes": [
+      "a second component always doubles system capacity",
+      "redundancy means exactly twice the performance",
+      "إضافة جزء مماثل تضاعف القدرة دائمًا"
+    ]
+  },
+  {
+    "id": "EM7",
+    "domain": "engineering",
+    "name": "Cheapest-Is-Optimal Model",
+    "short": "The cheapest feasible design is always optimal",
+    "claim": "cheapest_is_optimal",
+    "description": "The learner reduces a multi-criteria decision to initial cost.",
+    "keywords": [
+      "cheapest is best",
+      "lowest cost",
+      "الأرخص الأفضل",
+      "أقل كلفة"
+    ],
+    "prototypes": [
+      "the lowest price design is automatically optimal",
+      "cost is the only optimization objective",
+      "الحل الأرخص هو الحل الأمثل دائمًا"
+    ]
+  },
+  {
+    "id": "EM8",
+    "domain": "engineering",
+    "name": "Single-Metric Optimization Model",
+    "short": "Optimization means maximizing one metric",
+    "claim": "single_metric_optimum",
+    "description": "The learner ignores trade-offs between competing objectives.",
+    "keywords": [
+      "maximize one thing",
+      "fastest wins",
+      "هدف واحد",
+      "أعلى قيمة"
+    ],
+    "prototypes": [
+      "optimization means choose the maximum single value",
+      "the fastest design wins despite cost or reliability",
+      "التحسين يعني تعظيم مؤشر واحد فقط"
+    ]
+  },
+  {
+    "id": "MM1",
+    "domain": "mathematics",
+    "name": "Magic Sign Change Model",
+    "short": "Terms change sign simply because they move",
+    "claim": "sign_change_magic",
+    "description": "The learner uses the move-and-change-sign shortcut without preserving equality.",
+    "keywords": [
+      "move it change sign",
+      "goes to other side",
+      "انقل وغير الإشارة",
+      "الطرف الثاني"
+    ],
+    "prototypes": [
+      "a term changes sign because it crosses the equals sign",
+      "move it to the other side and flip it",
+      "ننقل الحد للطرف الآخر فتتغير الإشارة"
+    ]
+  },
+  {
+    "id": "MM2",
+    "domain": "mathematics",
+    "name": "Partial Distribution Model",
+    "short": "A factor distributes to the first term only",
+    "claim": "partial_distribution",
+    "description": "The learner does not multiply every term inside parentheses.",
+    "keywords": [
+      "multiply first term",
+      "only x",
+      "أضرب الأول",
+      "على x فقط"
+    ],
+    "prototypes": [
+      "two times x plus three means two x plus three",
+      "the outside factor only multiplies the first term",
+      "العدد خارج القوس يضرب الحد الأول فقط"
+    ]
+  },
+  {
+    "id": "MM3",
+    "domain": "mathematics",
+    "name": "Repeated-Input Function Model",
+    "short": "One input may have multiple outputs in a function",
+    "claim": "multiple_outputs_allowed",
+    "description": "The learner allows the same function input to map to different outputs.",
+    "keywords": [
+      "one input two outputs",
+      "still a function",
+      "مدخل واحد مخرجين",
+      "تبقى دالة"
+    ],
+    "prototypes": [
+      "a function can give two outputs for the same input",
+      "repeated input with different outputs is allowed",
+      "يمكن للمدخل نفسه أن يملك مخرجين في الدالة"
+    ]
+  },
+  {
+    "id": "MM4",
+    "domain": "mathematics",
+    "name": "Vertical-Line Direction Model",
+    "short": "The vertical line test checks repeated y-values",
+    "claim": "vertical_line_confusion",
+    "description": "The learner confuses repeated outputs with repeated inputs.",
+    "keywords": [
+      "repeated y",
+      "horizontal instead",
+      "قيم y متكررة",
+      "خط أفقي"
+    ],
+    "prototypes": [
+      "repeated y values make a relation not a function",
+      "the vertical line test checks outputs",
+      "اختبار الخط العمودي يفحص تكرار المخرجات"
+    ]
+  },
+  {
+    "id": "MM5",
+    "domain": "mathematics",
+    "name": "Co-Increase Proportional Model",
+    "short": "If both quantities increase, they are proportional",
+    "claim": "increase_means_proportional",
+    "description": "The learner identifies proportionality from direction rather than a constant ratio.",
+    "keywords": [
+      "both increase",
+      "go up together",
+      "يزيدان معًا",
+      "كلهم بزيدوا"
+    ],
+    "prototypes": [
+      "two quantities are proportional because both increase",
+      "going up together proves proportionality",
+      "طالما القيمتان تزدادان فالعلاقة تناسبية"
+    ]
+  },
+  {
+    "id": "MM6",
+    "domain": "mathematics",
+    "name": "Additive Proportion Model",
+    "short": "A constant difference proves proportionality",
+    "claim": "constant_difference_proportional",
+    "description": "The learner confuses a constant additive change with a constant multiplicative ratio.",
+    "keywords": [
+      "same difference",
+      "add two each time",
+      "فرق ثابت",
+      "نضيف نفس الرقم"
+    ],
+    "prototypes": [
+      "a constant difference means the table is proportional",
+      "adding the same amount each row proves proportion",
+      "الفرق الثابت يعني تناسبًا طرديًا"
+    ]
+  },
+  {
+    "id": "MM7",
+    "domain": "mathematics",
+    "name": "Converse Equivalence Model",
+    "short": "A conditional statement and its converse are equivalent",
+    "claim": "converse_equivalent",
+    "description": "The learner assumes reversing if-then preserves truth.",
+    "keywords": [
+      "reverse is true",
+      "same statement backwards",
+      "العكس صحيح",
+      "نفس العبارة"
+    ],
+    "prototypes": [
+      "if p implies q then q must imply p",
+      "the converse is always equivalent",
+      "إذا صحت العبارة فالعكس صحيح دائمًا"
+    ]
+  },
+  {
+    "id": "MM8",
+    "domain": "mathematics",
+    "name": "Example-Proves-Rule Model",
+    "short": "One confirming example proves a general rule",
+    "claim": "example_proves_rule",
+    "description": "The learner treats a single example as a proof.",
+    "keywords": [
+      "one example proves",
+      "worked once",
+      "مثال واحد يكفي",
+      "زبطت مرة"
+    ],
+    "prototypes": [
+      "one matching example proves the statement for all numbers",
+      "testing one value is a proof",
+      "مثال واحد ناجح يثبت القاعدة العامة"
+    ]
+  }
+]
+

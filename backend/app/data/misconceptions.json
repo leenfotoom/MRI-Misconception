@@ -1,0 +1,90 @@
+[
+  {
+    "id": "M1",
+    "name": "Current Consumption Model",
+    "short": "Current gets consumed",
+    "description": "The learner believes electric current is gradually used up as it passes through components.",
+    "prototypes": [
+      "the first bulb uses some electricity so less reaches the second bulb",
+      "current becomes weaker after going through a bulb",
+      "electricity gets consumed by components"
+    ]
+  },
+  {
+    "id": "M2",
+    "name": "Proximity-to-Battery Model",
+    "short": "Closer to battery = more power",
+    "description": "The learner believes components physically closer to the battery receive more current or power.",
+    "prototypes": [
+      "the bulb closer to the battery gets more electricity",
+      "the first bulb is brighter because it is nearer the battery",
+      "distance from the battery determines brightness"
+    ]
+  },
+  {
+    "id": "M3",
+    "name": "Constant-Current Battery Model",
+    "short": "Battery always sends the same current",
+    "description": "The learner believes a battery outputs a fixed current regardless of circuit resistance.",
+    "prototypes": [
+      "the battery pushes the same current no matter what is connected",
+      "current is fixed by the battery",
+      "adding resistance does not change the battery current"
+    ]
+  },
+  {
+    "id": "M4",
+    "name": "Voltage-Current Conflation",
+    "short": "Voltage and current are the same thing",
+    "description": "The learner treats voltage and current as interchangeable quantities.",
+    "prototypes": [
+      "voltage is the amount of current",
+      "more volts means the same thing as more current",
+      "current and voltage are basically identical"
+    ]
+  },
+  {
+    "id": "M5",
+    "name": "Component Uses All Current",
+    "short": "A component uses up current",
+    "description": "The learner believes a resistor or bulb can consume all current flowing into it.",
+    "prototypes": [
+      "the bulb uses all the current",
+      "nothing is left after the resistor",
+      "a component can take the electricity away"
+    ]
+  },
+  {
+    "id": "M6",
+    "name": "Sequential Arrival Model",
+    "short": "Current reaches components one by one",
+    "description": "The learner believes current first reaches the nearest component and only later reaches the next one.",
+    "prototypes": [
+      "electricity reaches the first bulb before the second",
+      "the first bulb gets current earlier",
+      "current travels component by component and arrives later"
+    ]
+  },
+  {
+    "id": "M7",
+    "name": "Equal-Split Parallel Model",
+    "short": "Parallel current always splits equally",
+    "description": "The learner believes current always divides equally between parallel branches, regardless of resistance.",
+    "prototypes": [
+      "current splits fifty fifty in parallel",
+      "both branches always get equal current",
+      "parallel means current is divided equally"
+    ]
+  },
+  {
+    "id": "M8",
+    "name": "Global Resistance Effect Model",
+    "short": "Adding resistance reduces current everywhere equally",
+    "description": "The learner believes adding any resistor reduces current in every part of a circuit by the same amount.",
+    "prototypes": [
+      "adding a resistor makes all currents smaller in the same way",
+      "one extra resistor reduces current everywhere equally",
+      "all branches lose the same current when resistance is added"
+    ]
+  }
+]

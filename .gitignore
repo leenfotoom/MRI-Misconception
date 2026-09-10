@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+node_modules/
+.next/
+frontend/.env.local
+.DS_Store
+
+# Local learner-history databases
+backend/data/*.db
+backend/data/*.db-*
+backend/.env
+backend/.venv/
+frontend/node_modules/
+frontend/.next/
